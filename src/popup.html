@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>La Voz - Noticias Libres</title>
+    <script src="lib/jquery.min.js"></script>
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body ng-app="RequestBlockerApp">
+    <div class="container" ng-controller="PopupController" ng-init="init()" style="width: 500px;">
+      <h1>La Voz - Noticias Libres</h1>
+
+      <div>
+        <button class="btn btn-primary" ng-click="start()">Comenzar</button>
+      </div>
+      <div>
+        <button class="btn btn-primary" style="background-color:red;" ng-click="stop()">Stop</button>
+      </div>
+      <br />
+
+      <div id="modal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title">{{modalTitle}}</h4>
+            </div>
+            <div class="modal-body">
+              <p ng-class="modalClass">{{modalMessage}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+  </body>
+</html>
